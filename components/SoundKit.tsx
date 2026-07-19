@@ -312,7 +312,7 @@ export default function SoundKit() {
       onClick={toggle}
       aria-pressed={on}
       aria-label={on ? "Turn sound off" : "Turn sound on"}
-      className="fixed right-24 top-4 z-[75] flex items-center gap-2.5 py-2 font-mono text-[0.6875rem] uppercase tracking-[0.22em] mix-blend-difference text-porcelain md:right-36 md:top-6"
+      className="fixed right-28 top-[1.15rem] z-[75] flex items-center gap-2.5 py-2 font-mono text-[0.6875rem] uppercase tracking-[0.22em] mix-blend-difference text-porcelain md:right-36 md:top-6"
     >
       <span aria-hidden className="flex h-3 items-end gap-[2.5px]">
         {[0, 1, 2, 3].map((i) => (
@@ -326,7 +326,7 @@ export default function SoundKit() {
           />
         ))}
       </span>
-      {on ? "Sound" : "Muted"}
+      <span className="hidden md:inline">{on ? "Sound" : "Muted"}</span>
     </button>
   );
 }

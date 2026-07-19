@@ -255,16 +255,20 @@ export default function PaperPlaneCanvas() {
       const vw = Math.tan((camera.fov * Math.PI) / 360) * camera.position.z;
       const spawnX = -0.12 * vw * camera.aspect;
       const spawnY = 0.32 * vw;
+      const isNarrow = width < 768;
       const poseX = current.x * vw * camera.aspect;
-      const poseY = current.y * vw + Math.sin(t * 0.8) * 0.07 + velocity * -0.5;
+      const poseY =
+        current.y * vw +
+        (isNarrow ? 0.14 * vw : 0) + // ride higher on phones, clear of headlines
+        Math.sin(t * 0.8) * 0.07 +
+        velocity * -0.5;
 
       rocket.position.x = THREE.MathUtils.lerp(spawnX, poseX, intro);
       rocket.position.y = THREE.MathUtils.lerp(spawnY, poseY, intro);
       rocket.position.z = THREE.MathUtils.lerp(-14, 0, intro);
 
-      const mobile = width < 768;
       const jigScale = 1 + Math.sin(t * 31) * jig * 0.05;
-      rocket.scale.setScalar(current.scale * (mobile ? 0.5 : 0.8) * jigScale);
+      rocket.scale.setScalar(current.scale * (isNarrow ? 0.42 : 0.8) * jigScale);
       const alpha = current.opacity * THREE.MathUtils.clamp(intro * 2.5, 0, 1);
       for (const m of materials) m.opacity = alpha;
 
