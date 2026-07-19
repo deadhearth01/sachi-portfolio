@@ -42,6 +42,14 @@ export default function Hero() {
       data-scene="01"
       className="relative flex min-h-svh flex-col justify-end overflow-hidden"
     >
+      {/* generated silk still sits under the live shader — and carries the
+          scene alone when the shader is off (reduced motion / no WebGL) */}
+      <img
+        src="/images/generated/hero-silk.jpg"
+        alt=""
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover opacity-70"
+      />
       <SilkCanvas className="absolute inset-0" />
       <div className="absolute inset-0 bg-gradient-to-b from-porcelain/0 via-porcelain/0 to-porcelain" />
 

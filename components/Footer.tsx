@@ -145,7 +145,17 @@ export default function Footer() {
         <div className="flex flex-col justify-between gap-3 border-t border-porcelain/15 py-6 font-mono text-[0.625rem] uppercase tracking-[0.22em] text-stone md:flex-row">
           <p>© {new Date().getFullYear()} SACHI — All stories reserved</p>
           <p>Marketing agency, Visakhapatnam</p>
-          <p>Fin.</p>
+          <p>
+            Crafted with love by{" "}
+            <a
+              href="https://www.theavni.studio/"
+              target="_blank"
+              rel="noreferrer"
+              className="link-line text-porcelain/70 hover:text-porcelain"
+            >
+              Avni Studio
+            </a>
+          </p>
         </div>
       </div>
 

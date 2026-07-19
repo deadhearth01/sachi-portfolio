@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import * as THREE from "three";
 
 /**
@@ -115,10 +116,13 @@ function buildDart() {
 
 export default function PaperPlaneCanvas() {
   const holder = useRef<HTMLDivElement>(null);
+  // the paper plane lives on the homepage story only
+  const pathname = usePathname();
+  const active = pathname === "/";
 
   useEffect(() => {
     const el = holder.current;
-    if (!el) return;
+    if (!el || !active) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -273,7 +277,9 @@ export default function PaperPlaneCanvas() {
       renderer.dispose();
       el.removeChild(renderer.domElement);
     };
-  }, []);
+  }, [active]);
+
+  if (!active) return null;
 
   return (
     <div

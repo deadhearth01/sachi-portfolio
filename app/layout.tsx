@@ -34,6 +34,16 @@ export const metadata: Metadata = {
   title: "SACHI — Marketing agency",
   description:
     "SACHI is a marketing agency in Visakhapatnam. We build brands people remember — not content people scroll past.",
+  openGraph: {
+    title: "SACHI — Marketing agency",
+    description:
+      "We build brands people remember — not content people scroll past.",
+    images: [{ url: "/images/generated/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/generated/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({

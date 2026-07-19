@@ -32,7 +32,7 @@ const beliefs = [
 export default function AboutPage() {
   return (
     <main>
-      <section data-ribbon="center-far" className="flex min-h-svh flex-col justify-end px-5 pb-14 pt-32 md:px-10">
+      <section className="flex min-h-svh flex-col justify-end px-5 pb-14 pt-32 md:px-10">
         <p className="text-scene-label mb-6">About SACHI</p>
         <h1 className="headline-xl text-[13vw] md:text-[8.5vw]">
           A marketing agency
@@ -66,6 +66,18 @@ export default function AboutPage() {
             </p>
           </RevealBlock>
         </div>
+      </section>
+
+      {/* home water: dawn over the coastline that raised us */}
+      <section aria-label="Visakhapatnam at dawn" className="relative border-t border-line">
+        <img
+          src="/images/generated/about-vizag.jpg"
+          alt="Dawn haze over the Visakhapatnam coastline, fishing boats as silhouettes"
+          className="h-[52svh] w-full object-cover md:h-[72svh]"
+        />
+        <p className="absolute bottom-4 left-5 font-mono text-[0.625rem] uppercase tracking-[0.22em] text-porcelain/90 md:bottom-6 md:left-10">
+          Visakhapatnam, 05:47 — home water
+        </p>
       </section>
 
       <section className="border-t border-line px-5 py-20 md:px-10 md:py-28">

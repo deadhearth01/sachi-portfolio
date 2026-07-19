@@ -15,6 +15,7 @@ export type Founder = {
   skills: string[];
   closing: string;
   closingNote?: string;
+  still: { src: string; alt: string; caption: string };
 };
 
 export const girish: Founder = {
@@ -60,6 +61,11 @@ export const girish: Founder = {
   closing:
     "The best marketing doesn't feel like marketing. It tells the right story, builds trust, and helps businesses grow.",
   closingNote: "That's the mindset I bring to every brand I work with.",
+  still: {
+    src: "/images/generated/girish-still.jpg",
+    alt: "A brass desk lamp glowing over an open notebook of brand diagrams",
+    caption: "Where the strategies get drawn — late",
+  },
 };
 
 export const sahith: Founder = {
@@ -149,4 +155,9 @@ export const sahith: Founder = {
     "The best marketers don't just study markets — they study people.",
   closingNote:
     "When the right message reaches the right audience at the right time, marketing stops feeling like advertising. It becomes a conversation that builds trust, creates communities, and drives meaningful growth.",
+  still: {
+    src: "/images/generated/sahith-still.jpg",
+    alt: "An open travel journal with a boarding pass and compass on a map of the Egyptian coast",
+    caption: "Egypt, 2024 — where it all began",
+  },
 };
