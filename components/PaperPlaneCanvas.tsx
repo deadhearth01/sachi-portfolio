@@ -173,6 +173,8 @@ export default function PaperPlaneCanvas() {
           break;
         }
       }
+      // on phones the dial fills the width — the plane would sit on the text
+      if (name === "process" && window.innerWidth < 768) name = "hidden";
       activeName = name;
       Object.assign(target, POSES[name] || POSES.hidden);
     };

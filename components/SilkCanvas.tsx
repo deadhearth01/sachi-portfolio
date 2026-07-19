@@ -87,6 +87,8 @@ export default function SilkCanvas({ className = "" }: { className?: string }) {
     const el = holder.current;
     if (!el) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // phones get the still silk image instead — one less WebGL context
+    if (window.innerWidth < 768) return;
 
     const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.6));

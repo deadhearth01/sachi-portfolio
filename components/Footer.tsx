@@ -76,7 +76,11 @@ export default function Footer() {
             </a>
           </div>
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => {
+              const lenis = (window as unknown as { __lenis?: { scrollTo: (t: number) => void } }).__lenis;
+              if (lenis) lenis.scrollTo(0);
+              else window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="btn-pill btn-pill--invert self-start whitespace-nowrap md:self-auto"
           >
             Back to the top <span aria-hidden>↑</span>
