@@ -182,7 +182,7 @@ export default function PaperPlaneCanvas() {
 
     const pickPose = () => {
       const mid = window.innerHeight * 0.5;
-      let name = "right";
+      let name = "hidden"; // sections opt in; untagged content stays clear
       for (const s of document.querySelectorAll<HTMLElement>("[data-ribbon]")) {
         const r = s.getBoundingClientRect();
         if (r.top <= mid && r.bottom >= mid) {

@@ -13,7 +13,7 @@ export default function ProfileLayout({
   return (
     <main>
       {/* opening */}
-      <section className="relative flex min-h-svh flex-col justify-end px-5 pb-12 pt-32 md:px-10">
+      <section data-ribbon="center-far" className="relative flex min-h-svh flex-col justify-end px-5 pb-12 pt-32 md:px-10">
         <p className="text-scene-label mb-6">
           The people behind SACHI — {founder.roles.join(" · ")}
         </p>
@@ -45,7 +45,7 @@ export default function ProfileLayout({
       </section>
 
       {/* intro */}
-      <section className="border-t border-line px-5 py-20 md:px-10 md:py-28">
+      <section data-ribbon="hidden" className="border-t border-line px-5 py-20 md:px-10 md:py-28">
         <div className="max-w-3xl space-y-6 md:ml-[38%]">
           {founder.intro.map((p, i) => (
             <RevealBlock key={i}>
@@ -57,7 +57,7 @@ export default function ProfileLayout({
 
       {/* chapters */}
       {founder.chapters.map((ch, idx) => (
-        <section key={ch.title} className="border-t border-line px-5 py-20 md:px-10 md:py-28">
+        <section key={ch.title} data-ribbon="hidden" className="border-t border-line px-5 py-20 md:px-10 md:py-28">
           <div className="grid gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
             <div className="md:sticky md:top-28 md:self-start">
               <p className="text-scene-label mb-5">Chapter {String(idx + 1).padStart(2, "0")}</p>
@@ -91,7 +91,7 @@ export default function ProfileLayout({
       ))}
 
       {/* impact */}
-      <section className="bg-ink px-5 py-24 text-porcelain md:px-10 md:py-36">
+      <section data-ribbon="hidden" className="bg-ink px-5 py-24 text-porcelain md:px-10 md:py-36">
         <p className="text-scene-label mb-12">Impact in numbers</p>
         <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-md bg-porcelain/15 sm:grid-cols-2 lg:grid-cols-4">
           {founder.stats.map((s) => (
@@ -119,7 +119,7 @@ export default function ProfileLayout({
       </section>
 
       {/* closing */}
-      <section className="px-5 py-28 md:px-10 md:py-44">
+      <section data-ribbon="right-low" className="px-5 py-28 md:px-10 md:py-44">
         <RevealBlock>
           <blockquote className="font-display max-w-[20ch] text-[9vw] font-[440] italic leading-[1.1] tracking-tight md:text-[4.4vw]">
             {founder.closing}

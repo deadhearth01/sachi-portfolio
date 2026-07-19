@@ -41,7 +41,7 @@ function Clock() {
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-ink text-porcelain">
+    <footer data-ribbon="hidden" className="relative overflow-hidden bg-ink text-porcelain">
       {/* optional generated backdrop — drops in from AI-PROMPTS.md §7 */}
       <div
         aria-hidden

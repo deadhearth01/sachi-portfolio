@@ -32,7 +32,7 @@ const beliefs = [
 export default function AboutPage() {
   return (
     <main>
-      <section className="flex min-h-svh flex-col justify-end px-5 pb-14 pt-32 md:px-10">
+      <section data-ribbon="center-far" className="flex min-h-svh flex-col justify-end px-5 pb-14 pt-32 md:px-10">
         <p className="text-scene-label mb-6">About SACHI</p>
         <h1 className="headline-xl text-[13vw] md:text-[8.5vw]">
           A marketing agency
