@@ -31,6 +31,7 @@ const mono = Spline_Sans_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sachi.agency"),
   title: "SACHI — Marketing agency",
   description:
     "SACHI is a marketing agency in Visakhapatnam. We build brands people remember — not content people scroll past.",
