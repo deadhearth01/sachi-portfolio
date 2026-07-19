@@ -43,7 +43,7 @@ export default function Manifesto() {
   return (
     <section
       ref={root}
-      data-ribbon="left"
+      data-ribbon="right-low"
       data-scene="02"
       className="relative px-5 py-32 md:px-10 md:py-52"
     >

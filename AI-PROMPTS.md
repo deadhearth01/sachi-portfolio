@@ -42,6 +42,14 @@ The word-free composition: porcelain silk field with one deep ultramarine fold
 crossing the frame diagonally, film grain, cinematic light — leave the left
 third calm for a logo overlay + style suffix
 
+## 7. `footer-tide.jpg` (footer backdrop, 2400×1200) — auto-appears once saved
+The closing image of the site. Night-time Bay of Bengal seen from above,
+near-black water with faint moonlit ripples, one long streak of deep
+ultramarine light crossing the frame like a signature, extremely dark and
+quiet, almost monochrome, cinematic end-credits mood + style suffix
+(This one should stay very dark — it sits behind ink-black `#12100C` at 25%
+opacity, fading in from the top.)
+
 ---
 
 ### Founder portraits (when the real photos arrive)

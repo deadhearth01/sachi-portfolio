@@ -24,6 +24,8 @@ html {
   color: var(--color-ink);
   scrollbar-width: thin;
   scrollbar-color: var(--color-stone) transparent;
+  /* scroll-linked pins + smooth scroll: browser re-anchoring must stay off */
+  overflow-anchor: none;
 }
 
 html.lenis,
