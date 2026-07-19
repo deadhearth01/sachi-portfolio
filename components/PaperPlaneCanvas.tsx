@@ -26,7 +26,7 @@ const POSES: Record<string, Pose> = {
   center: { x: 0.05, y: 0.1, scale: 1.2, opacity: 1, lean: 0.2 },
   "center-far": { x: 0.32, y: 0.3, scale: 0.55, opacity: 1, lean: 0.35 },
   // parked beside the method dial, nose at the pointer line, holding still
-  process: { x: -0.3, y: 0.02, scale: 0.45, opacity: 1, lean: 0.08 },
+  process: { x: -0.32, y: 0.07, scale: 0.42, opacity: 1, lean: 0.05 },
   hidden: { x: 1.6, y: 0.6, scale: 0.7, opacity: 0, lean: 0.5 },
 };
 
@@ -158,6 +158,7 @@ export default function PaperPlaneCanvas() {
     const INTRO_LENGTH = 1.9;
     let intro = reduced ? 1 : 0;
 
+    let activeName = "hidden";
     const pickPose = () => {
       const mid = window.innerHeight * 0.5;
       let name = "hidden"; // sections opt in; untagged content stays clear
@@ -168,6 +169,7 @@ export default function PaperPlaneCanvas() {
           break;
         }
       }
+      activeName = name;
       Object.assign(target, POSES[name] || POSES.hidden);
     };
 
@@ -224,7 +226,7 @@ export default function PaperPlaneCanvas() {
       const poseY =
         current.y * vw +
         (isNarrow ? 0.14 * vw : 0) +
-        Math.sin(t * 0.8) * 0.07 +
+        Math.sin(t * 0.8) * (activeName === "process" ? 0.012 : 0.07) +
         velocity * -0.5;
 
       // minimal cursor-follow: the plane eases a little toward the mouse

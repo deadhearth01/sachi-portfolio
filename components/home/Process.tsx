@@ -121,7 +121,7 @@ export default function Process() {
           <div className="md:absolute md:inset-0 md:overflow-hidden md:[mask-image:linear-gradient(to_bottom,transparent,black_28%,black_72%,transparent)]">
             <ol
               ref={wheel}
-              className="space-y-8 md:absolute md:left-24 md:right-0 md:top-1/2 md:mt-[-64px] md:space-y-0"
+              className="space-y-8 md:absolute md:left-24 md:right-0 md:top-1/2 md:mt-[-74px] md:space-y-0"
             >
               {processSteps.map((s, i) => (
                 <li
@@ -129,7 +129,7 @@ export default function Process() {
                   data-row
                   className="transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:flex md:h-[148px] md:flex-col md:justify-center"
                 >
-                  <div className="flex items-baseline gap-5 md:gap-8">
+                  <div className="flex items-center gap-5 md:gap-8">
                     <span className="font-mono text-[0.6875rem] tracking-[0.22em] text-ultra">
                       {String(i + 1).padStart(2, "0")} / 07
                     </span>
