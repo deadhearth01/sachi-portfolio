@@ -41,7 +41,7 @@ function ReelCard({
 
   return (
     <figure
-      className="group relative w-[72vw] shrink-0 md:w-[21vw]"
+      className="group relative w-[58vw] shrink-0 md:w-[21vw]"
       style={{ transform: `rotate(${index % 2 === 0 ? 1.6 : -1.8}deg)` }}
     >
       <div className="relative aspect-[9/16] overflow-hidden rounded-md bg-paper shadow-[0_30px_80px_-30px_rgba(18,16,12,0.45)] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-0 group-hover:scale-[1.015]">
@@ -72,7 +72,9 @@ function ReelCard({
           {c.sector}
         </span>
       </figcaption>
-      <p className="mt-1 max-w-[36ch] text-sm leading-relaxed text-ink-soft">{c.line}</p>
+      <p className="mt-1 hidden max-w-[36ch] text-sm leading-relaxed text-ink-soft md:block">
+        {c.line}
+      </p>
     </figure>
   );
 }
@@ -87,24 +89,25 @@ export default function ReelWall() {
     const tr = track.current;
     if (!sec || !tr) return;
 
-    const mm = gsap.matchMedia();
-    mm.add("(min-width: 768px)", () => {
-      const getDist = () => tr.scrollWidth - window.innerWidth;
-      gsap.to(tr, {
-        x: () => -getDist(),
-        ease: "none",
-        scrollTrigger: {
-          trigger: sec,
-          start: "top top",
-          end: () => `+=${getDist()}`,
-          scrub: 1,
-          pin: true,
-          invalidateOnRefresh: true,
-          anticipatePin: 1,
-        },
-      });
+    // vertical scroll drives the reel sideways — on every screen size
+    const getDist = () => Math.max(tr.scrollWidth - window.innerWidth, 0);
+    const tween = gsap.to(tr, {
+      x: () => -getDist(),
+      ease: "none",
+      scrollTrigger: {
+        trigger: sec,
+        start: "top top",
+        end: () => `+=${getDist()}`,
+        scrub: 1,
+        pin: true,
+        invalidateOnRefresh: true,
+        anticipatePin: 1,
+      },
     });
-    return () => mm.revert();
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
   }, []);
 
   return (
@@ -115,8 +118,8 @@ export default function ReelWall() {
       data-scene="04"
       className="relative overflow-hidden bg-paper"
     >
-      <div className="flex h-auto min-h-svh flex-col justify-center py-16 md:h-svh md:justify-end md:pb-8 md:pt-0">
-        <div className="mb-8 flex items-end justify-between px-5 md:px-10">
+      <div className="flex h-svh flex-col justify-end pb-6 md:pb-8">
+        <div className="mb-6 flex items-end justify-between px-5 md:mb-8 md:px-10">
           <div>
             <p className="text-scene-label mb-4">Scene 04 / 08 — The work</p>
             <h2 className="headline-xl text-[11vw] md:text-[4.2vw]">
@@ -130,7 +133,7 @@ export default function ReelWall() {
 
         <div
           ref={track}
-          className="flex touch-pan-x gap-[6vw] overflow-x-auto px-5 pb-6 [scrollbar-width:none] md:gap-[4vw] md:overflow-x-visible md:px-10 md:pb-0 [&::-webkit-scrollbar]:hidden"
+          className="flex gap-[6vw] px-5 pb-2 md:gap-[4vw] md:px-10 md:pb-0"
         >
           {clients.map((c, i) => (
             <ReelCard
