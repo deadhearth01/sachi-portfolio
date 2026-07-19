@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <section data-ribbon="center-far" className="flex min-h-svh flex-col justify-end px-5 pb-14 pt-32 md:px-10">
+      <section data-ribbon="right" className="flex min-h-svh flex-col justify-end px-5 pb-14 pt-32 md:px-10">
         <p className="text-scene-label mb-6">Contact</p>
         <h1 className="headline-xl text-[13vw] md:text-[9vw]">
           Tell us your story<span className="text-ultra">.</span>

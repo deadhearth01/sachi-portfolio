@@ -20,11 +20,13 @@ type Pose = {
 };
 
 const POSES: Record<string, Pose> = {
-  right: { x: 0.64, y: 0.24, scale: 1, opacity: 1, lean: 0.3 },
+  right: { x: 0.68, y: 0.3, scale: 0.9, opacity: 1, lean: 0.3 },
   "right-low": { x: 0.62, y: -0.32, scale: 0.78, opacity: 1, lean: 0.12 },
   left: { x: -0.66, y: 0.2, scale: 0.82, opacity: 1, lean: -0.25 },
   center: { x: 0.05, y: 0.1, scale: 1.2, opacity: 1, lean: 0.2 },
   "center-far": { x: 0.32, y: 0.3, scale: 0.55, opacity: 1, lean: 0.35 },
+  // parked beside the method dial, nose at the pointer line, holding still
+  process: { x: -0.3, y: 0.02, scale: 0.45, opacity: 1, lean: 0.08 },
   hidden: { x: 1.6, y: 0.6, scale: 0.7, opacity: 0, lean: 0.5 },
 };
 
