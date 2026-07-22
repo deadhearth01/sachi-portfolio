@@ -30,16 +30,12 @@ export default function ProfileLayout({
               {founder.hook}
             </p>
           </RevealBlock>
-          {/* portrait placeholder — drop the photo in here */}
           <div className="relative aspect-[3/4] w-full max-w-xs justify-self-end overflow-hidden rounded-md border border-line bg-paper md:max-w-sm">
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-              <span className="font-display text-[8rem] font-[380] italic text-line">
-                {founder.name.charAt(0)}
-              </span>
-              <span className="font-mono text-[0.625rem] uppercase tracking-[0.22em] text-stone">
-                Portrait — arriving soon
-              </span>
-            </div>
+            <img
+              src={founder.portrait.src}
+              alt={founder.portrait.alt}
+              className="absolute inset-0 h-full w-full object-cover object-top"
+            />
           </div>
         </div>
       </section>
